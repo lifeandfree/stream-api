@@ -8,7 +8,7 @@ public class Main {
         sayHi = GreeterImpl::sayHi;
         sayHi.sayHi();
 
-        Greeter greeter = System.out::println;
+        Greeter greeter = () -> System.out.println("hi");
         greeter.sayHi();
     }
 }
