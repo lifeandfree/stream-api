@@ -44,8 +44,7 @@ public class Main {
                 .map(x -> x + " ")
                 .peek(System.out::print)
                 .collect(Collectors.toList());
-
-        System.out.println();
+        System.out.println(txtList);
         Optional<Integer> result = txtList.parallelStream()
                 .map(s -> Integer.valueOf(s.trim()))
                 .peek(i -> System.out.println(Thread.currentThread().getName() + " " + i))

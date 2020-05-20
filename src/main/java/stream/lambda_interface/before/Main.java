@@ -37,5 +37,6 @@ public class Main {
                 };
                 break;
         }
+        taxCalculator.calculateTax(salary);
     }
 }

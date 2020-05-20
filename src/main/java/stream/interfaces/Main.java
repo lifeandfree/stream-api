@@ -61,11 +61,18 @@ public class Main {
         System.out.println(comparator.compare(1, 2));
 
         Optional<String> optionalFull = Optional.of("some");
-        Optional<String> optionalEmpty = Optional.ofNullable(null);
+        optionalFull = optionalFull
+                .map(s -> s  + " " + " hello")
+                .filter(s -> s.length() > 20)
+                .map(s -> s + " ffe");
+//        System.out.println(optionalFull.get());
+        Optional<String> optionalEmpty = Optional.empty();
+        Optional<String> optionalNull = Optional.ofNullable(null);
 //        String msg = "empty";
 //        Optional<String> optionalEmpty = Optional.of(msg);
 //        msg = null;
         System.out.println(optionalFull.isPresent());
-        System.out.println(optionalEmpty.isPresent());
+        System.out.println(optionalEmpty.orElse("empty"));
+//        System.out.println(optionalFull.get());
     }
 }
